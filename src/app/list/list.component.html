@@ -1,0 +1,41 @@
+<app-onboarding-parent></app-onboarding-parent>
+
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-sm">
+            <mat-form-field>
+                <mat-select [(ngModel)]="category" (ngModelChange)="update()">
+                    <mat-option *ngFor="let student of studentTypes" [value]="student.viewValue">
+                        {{student.viewValue}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+
+        <div class="col-sm"></div>
+        <div class="col-sm"></div>
+
+
+        <div style="margin-top: 15px" class="col-sm"> <input type="text" placeholder="Enter student name" [(ngModel)]="searchKey"
+                (ngModelChange)="update()">
+        </div>
+
+    </div>
+
+    <hr>
+
+
+    <div *ngIf="allStudents">
+
+        <div class="row">
+
+            <app-student-detail *ngFor="let student of allStudents" [student]="student"
+                (clickEvent)="handleEvent($event)"></app-student-detail>
+
+        </div>
+
+    </div>
+
+</div>

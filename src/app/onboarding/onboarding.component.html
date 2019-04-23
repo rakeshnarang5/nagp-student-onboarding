@@ -1,0 +1,71 @@
+<app-onboarding-parent></app-onboarding-parent>
+
+<div class="container" id="form">
+    <label for="student-name">Student Name: </label>
+    <input type="text" class="form-control" id="studentName" placeholder="Enter student name"
+        [(ngModel)]="student.studentName" [disabled]="isDisabled">
+
+    <br>
+
+    <label for="category">Category: </label>
+    <mat-form-field>
+        <mat-label>Student Category</mat-label>
+        <mat-select [(ngModel)]="student.category" [disabled]="isDisabled">
+            <mat-option *ngFor="let student of studentTypes" [value]="student.viewValue">
+                {{student.viewValue}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <br>
+
+    <div>
+            <label for="student.documents">Documents: -</label>    <div style="border: 2px inherit">    <button class="btn btn-secondary" (click)="checkAll()">Check All</button>    </div>
+
+    </div>
+    <br>
+    <mat-checkbox [(ngModel)]="student.domicile" [disabled]="isDisabled">Domicile *</mat-checkbox>
+    <br>
+    <mat-checkbox [(ngModel)]="student.birthCertificate" [disabled]="isDisabled">Birth Certificate *</mat-checkbox>
+    <br>
+    <mat-checkbox [(ngModel)]="student.marksheets" [disabled]="isDisabled">Marksheets *</mat-checkbox>
+    <br>
+    <mat-checkbox [(ngModel)]="student.policeClearance" [disabled]="isDisabled">Police Clearance 
+    </mat-checkbox>
+    <br>
+    <mat-checkbox [(ngModel)]="student.passport" [disabled]="isDisabled">Passport *</mat-checkbox>
+    <br>
+    <mat-checkbox [(ngModel)]="student.declaration" [disabled]="isDisabled">Declaration *</mat-checkbox>
+    <br>
+
+
+    <label for="dob">DOB: </label>
+    <input matInput [matDatepicker]="picker" placeholder="Choose a date" [(ngModel)]="student.dob"
+        [disabled]="isDisabled">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+
+    <br>
+
+    <label for="fatherName">Father's Name: </label>
+    <input class="form-control" [(ngModel)]="student.fatherName" type="text" placeholder="Enter Father's name"
+        [disabled]="isDisabled">
+
+    <br>
+
+    <label for="motherName">Mother's Name: </label>
+    <input class="form-control" [(ngModel)]="student.motherName" type="text" placeholder="Enter Mother's name"
+        [disabled]="isDisabled">
+
+    <br>
+
+    <label for="lastMarks">Last class score: </label>
+    <input class="form-control" [(ngModel)]="student.lastClassScore" type="text" placeholder="Enter class score in %"
+        [disabled]="isDisabled">
+
+    <br>
+
+    <button class="btn btn-primary" [disabled]="isDisabled" (click)="onboard()">Onboard</button>
+
+
+</div>

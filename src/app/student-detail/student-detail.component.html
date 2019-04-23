@@ -1,0 +1,25 @@
+<div class="container" >
+
+    <div class="clearfix"></div>
+
+    <div id="studentDetail" style="box-shadow: 5px 12px #888888" >
+        <h3>{{student.studentName}}</h3>
+
+        <p>{{student.category}}</p>
+
+        <p>Marks: {{student.lastClassScore}}</p>
+
+        <button class="btn btn-secondary"  style ="margin: 3px " [routerLink]="['/edit', student.id]"
+            routerLinkActive="router-link-active">Edit</button>
+
+        <button class="btn btn-secondary"  style ="margin: 3px " [routerLink]="['/view', student.id]"
+            routerLinkActive="router-link-active">View</button>
+
+        <button class="btn btn-danger"  style ="margin: 3px " (click)="delete()">Delete</button>
+
+    </div>
+
+
+    <br>
+
+</div>
