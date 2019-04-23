@@ -8,6 +8,18 @@ const adminUsers = [
   {
     username: 'Shivam',
     password: 'Muttoo'
+  },
+  {
+    username: 'Deepak',
+    password: 'Jha'
+  },
+  {
+    username: 'Amit',
+    password: 'Kumar'
+  },
+  {
+    username: 'admin',
+    password: 'admin'
   }
 ];
 
