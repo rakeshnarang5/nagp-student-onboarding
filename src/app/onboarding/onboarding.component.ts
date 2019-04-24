@@ -36,7 +36,7 @@ export class OnboardingComponent implements OnInit {
 
   onboard() {
     let errorMessages = this.validateInput(this.student);
-    if (errorMessages.length > 1) {
+    if (errorMessages.length >= 1) {
       for (let i = 0; i < errorMessages.length; i++) {
         this.toastr.error(errorMessages[i]);
       }
